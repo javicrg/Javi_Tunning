@@ -1,11 +1,11 @@
 RegisterNetEvent('Javi_Tunning:ModifyVehicle')
 AddEventHandler('Javi_Tunning:ModifyVehicle', function()
     if IsPedInAnyVehicle(PlayerPedId(), false) then
-		local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+	local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
         local name = GetPlayerName(PlayerId())
 
-		SetVehicleFuelLevel(GetVehiclePedIsUsing(PlayerPedId()), 100.0)
-		SetVehicleModKit(vehicle,0)
+	SetVehicleFuelLevel(GetVehiclePedIsUsing(PlayerPedId()), 100.0)
+	SetVehicleModKit(vehicle,0)
         SetVehicleMod(vehicle,0,GetNumVehicleMods(vehicle,0)-1,false)
         SetVehicleMod(vehicle,1,GetNumVehicleMods(vehicle,1)-1,false)
         SetVehicleMod(vehicle,2,GetNumVehicleMods(vehicle,2)-1,false)
@@ -40,8 +40,8 @@ AddEventHandler('Javi_Tunning:ModifyVehicle', function()
         SetVehicleTyreSmokeColor(vehicle,0,255,0)
         SetVehicleNumberPlateText(vehicle, name)
         SetVehicleNumberPlateTextIndex(vehicle,5)
-		SetVehicleDirtLevel(GetVehiclePedIsUsing(PlayerPedId()), 0)
+	SetVehicleDirtLevel(GetVehiclePedIsUsing(PlayerPedId()), 0)
 
-		ESX.ShowNotification('Vehicle modified.') -- You may put your own notifications here
+	ESX.ShowNotification('Vehicle modified.') -- You may put your own notifications here
 	end
 end)
